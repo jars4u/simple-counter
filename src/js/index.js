@@ -2,6 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+
 // include your styles into the webpack bundle
 import "../styles/index.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -10,7 +11,6 @@ import { faClock } from "@fortawesome/fontawesome-free";
 //import your own components
 import Home from "./component/home.jsx";
 
-//render your react application
 let counter = 0;
 Math.floor();
 setInterval(() => {
@@ -21,18 +21,19 @@ setInterval(() => {
     const five = Math.floor(counter / 10000);
     const six = Math.floor(counter / 100000);
     counter++;
-
+    
+    
     ReactDOM.render(
         <Home
-            numberOne={one % 10}
-            numberTwo={two % 10}
-            numberThree={three % 10}
-            numberFour={four % 10}
-            numberFive={five % 10}
-            numberSix={six % 10}
+            One={one % 10}
+            Two={two % 10}
+            Three={three % 10}
+            Four={four % 10}
+            Five={five % 10}
+            Six={six % 10}
         />,
         document.querySelector("#app")
     );
-}, 1000);
+}, 100);
 
 library.add(faClock)

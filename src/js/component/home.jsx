@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 library.add(faClock)
 
-const styleIn = {
+const style = {
 	general: {
 		backgroundColor: "black",
 		color: "white",
@@ -16,31 +16,25 @@ const styleIn = {
 	},
 
 	element: {
-		backgroundColor: "rgb(20, 20, 20)",
-		borderLeft: "1px solid white",
-		borderRight: "1px solid white",
-		borderRadius: "10px",
 		padding: "10px",
-		margin: "20px",
-		fontSize: "50px"
-	}
+		margin: "10px",
+		fontSize: "100px"
+		}
 }
 
 
 //create your first component
-const SecondsCounter = (props) => {
+function SecondsCounter(props) {
 	return (
 		<main className="container-flex">
-			<div style={styleIn.general}>
-				<div style={styleIn.element}>
-				<FontAwesomeIcon icon={faClock} size="1x" />
-				</div>
-				<div style={styleIn.element}>{props.numberSix}</div>
-				<div style={styleIn.element}>{props.numberFive}</div>
-				<div style={styleIn.element}>{props.numberFour}</div>
-				<div style={styleIn.element}>{props.numberThree}</div>
-				<div style={styleIn.element}>{props.numberTwo}</div>
-				<div style={styleIn.element}>{props.numberOne}</div>
+			<div style={style.general}>
+				<div style={style.element}><FontAwesomeIcon icon={faClock} size="1x" /></div>
+				<div style={style.element}>{props.Six}</div>
+				<div style={style.element}>{props.Five}</div>
+				<div style={style.element}>{props.Four}</div>
+				<div style={style.element}>{props.Three}</div>
+				<div style={style.element}>{props.Two}</div>
+				<div style={style.element}>{props.One}</div>
 			</div>
 		</main >
 					);
@@ -48,12 +42,12 @@ const SecondsCounter = (props) => {
 
 SecondsCounter.propTypes = {
 	style: PropTypes.string,
-	numberOne: PropTypes.number,
-	numberTwo: PropTypes.number,
-	numberThree: PropTypes.number,
-	numberFour: PropTypes.number,
-	numberFive: PropTypes.number,
-	numberSix: PropTypes.number
+	One: PropTypes.number,
+	Two: PropTypes.number,
+	Three: PropTypes.number,
+	Four: PropTypes.number,
+	Five: PropTypes.number,
+	Six: PropTypes.number
 }
 
 export default SecondsCounter;
