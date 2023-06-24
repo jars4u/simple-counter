@@ -1,26 +1,59 @@
 import React from "react";
+import Proptypes from "prop-types";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+library.add(faClock)
+
+const styleIn = {
+	general: {
+		backgroundColor: "black",
+		color: "white",
+		display: "flex",
+		justifyContent: "center"
+	},
+
+	element: {
+		backgroundColor: "rgb(20, 20, 20)",
+		borderLeft: "1px solid white",
+		borderRight: "1px solid white",
+		borderRadius: "10px",
+		padding: "10px",
+		margin: "20px",
+		fontSize: "50px"
+	}
+}
+
 
 //create your first component
-const Home = () => {
+const SecondsCounter = (props) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+		<main className="container-flex">
+			<div style={styleIn.general}>
+				<div style={styleIn.element}>
+				<FontAwesomeIcon icon={faClock} size="1x" />
+				</div>
+				<div style={styleIn.element}>{props.numberSix}</div>
+				<div style={styleIn.element}>{props.numberFive}</div>
+				<div style={styleIn.element}>{props.numberFour}</div>
+				<div style={styleIn.element}>{props.numberThree}</div>
+				<div style={styleIn.element}>{props.numberTwo}</div>
+				<div style={styleIn.element}>{props.numberOne}</div>
+			</div>
+		</main >
+					);
+				}
 
-export default Home;
+SecondsCounter.propTypes = {
+	style: PropTypes.string,
+	numberOne: PropTypes.number,
+	numberTwo: PropTypes.number,
+	numberThree: PropTypes.number,
+	numberFour: PropTypes.number,
+	numberFive: PropTypes.number,
+	numberSix: PropTypes.number
+}
+
+export default SecondsCounter;
